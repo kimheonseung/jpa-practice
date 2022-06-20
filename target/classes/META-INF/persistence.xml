@@ -24,6 +24,12 @@
 			<property name="hibernate.use_sql_comments" value="true" />
 			<!-- JPA 표준에 맞춘 새로운 키 생성 전략 사용 -->
 			<property name="hibernate.new_generator_mappings" value="true" />
+			<!-- 애플리케이션 실행 시점에 테이블 자동 생성 -->
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<!-- 이름 매핑 전략 - 카멜 표기법 -> 언더스코어 표기법 -->
+			<property name="hibernate.physical_naming_strategy" value="org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy" />
+			<!-- JPA 규격에 맞는 새로운 키 생성 전략 개발 -->
+			<property name="hibernate.id.new_generator_mappings" value="true" />
 		</properties>
 		
 		<!-- 참고. 환경에 따라 class를 인식하지 못하는 경우 -->

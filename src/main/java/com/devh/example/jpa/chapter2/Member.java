@@ -5,10 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-// 해당 클래스는 테이블과 매핑됨을 명시
-@Entity
-// 매핑할 테이블 정보를 명시
-@Table(name = "MEMBER")
+//// 해당 클래스는 테이블과 매핑됨을 명시
+//@Entity
+//// 매핑할 테이블 정보를 명시
+//@Table(name = "MEMBER")
 public class Member {
 	
 	// 테이블의 기본키를 명시 (식별자 필드)
