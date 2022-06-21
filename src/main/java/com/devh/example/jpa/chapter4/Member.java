@@ -6,8 +6,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
@@ -23,8 +21,15 @@ import javax.persistence.UniqueConstraint;
 public class Member {
 	@Id
 	// 기본 키 생성을 데이터베이스에 위임
-	// PostgreSQL, SQL Server, DB2
-	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	// 
+	// Identity 전략
+	//	- PostgreSQL, SQL Server, DB2 데이터베이스에서 사용 가능
+	// 	- 엔티티가 영속상태가 되기 위해 식별자가 필요하므로 persist 호출 즉시 INSERT SQL이 전달되어 트랜잭션 쓰기지연을 지원하지 않는다.
+	// 	- 하이버네이트는 JDBC3에 추가된 Statement.getGeneratedKeys()를 사용하여 저장과 동시에 기본 생성 키값을 가져온다.
+	// Sequence 전략
+	// 	- 유일한 값을 순서대로 생성하는 데이터베이스 오브젝트
+	// 	- 오라클, PostgreSQL, DB2, H2 데이터베이스에서 사용 가능
+//	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	@Column(name = "ID")
 	private String id;
 	@Column(name = "NAME", nullable = false, length = 10)
