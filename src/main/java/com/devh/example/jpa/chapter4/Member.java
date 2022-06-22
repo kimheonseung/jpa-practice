@@ -13,11 +13,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 
-@Entity
-@Table(name="MEMBER", uniqueConstraints = {@UniqueConstraint (
-		name = "NAME_AGE_UNIQUE", 
-		columnNames = {"NAME", "AGE"}
-		)})
+//@Entity
+//@Table(name="MEMBER", uniqueConstraints = {@UniqueConstraint (
+//		name = "NAME_AGE_UNIQUE", 
+//		columnNames = {"NAME", "AGE"}
+//		)})
 public class Member {
 	@Id
 	// 기본 키 생성을 데이터베이스에 위임
