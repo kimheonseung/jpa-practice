@@ -12,7 +12,9 @@ public class Member {
 	@Column(name = "MEMBER_ID")
 	private String id;
 	private String username;
-	
+
+	public Member() {}
+
 	public Member(String id, String username) {
 		this.id = id;
 		this.username = username;
@@ -51,6 +53,13 @@ public class Member {
 	}
 
 	public void setTeam(Team team) {
+		// 편의 메소드
+		// 서로 다른 단방향 연관관계 2개를 양방향인 것처럼 보이게 함
+		// 아래 사항을 견고히 해야함
+		if(this.team != null) {
+			this.team.getMembers().remove(this);
+		}
 		this.team = team;
+		team.getMembers().add(this);
 	}
 }
