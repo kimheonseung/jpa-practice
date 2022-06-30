@@ -1,20 +1,15 @@
-package com.devh.example.jpa.chapter5;
+package com.devh.example.jpa.chapter6;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 //@Entity
-public class Team {
-	@Id
-	@Column(name = "TEAM_ID")
+public class Product {
+	@Id @Column(name = "PRODUCT_ID")
 	private String id;
 	private String name;
-	
-	public Team(String id, String name) {
-		this.id = id;
-		this.name = name;
-	}
+
 	public String getId() {
 		return id;
 	}
@@ -27,4 +22,5 @@ public class Team {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 }
